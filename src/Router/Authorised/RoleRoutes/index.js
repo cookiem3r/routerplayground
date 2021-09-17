@@ -14,6 +14,7 @@ const RoleRoutes = () => {
   return (
     <div>
       <>
+        <h1>Header</h1>
         {isUser() && <UserRoleRoutes />}
         {isAdmin() && <AdminRoleRoutes />}
       </>

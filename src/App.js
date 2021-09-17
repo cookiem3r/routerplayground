@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/401" component={Unauthorised} />
-        <AuthorisedRoute component={RoleRoutes}></AuthorisedRoute>
+        <AuthorisedRoute path="/" component={RoleRoutes}></AuthorisedRoute>
       </Switch>
     </div>
   );
