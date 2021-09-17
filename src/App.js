@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from "react-router-dom";
+import "./App.css";
+import AuthorisedRoute from "./Router/Authorised/AuthorisedRoute";
+import Unauthorised from "./Pages/401";
+import RoleRoutes from "./Router/Authorised/RoleRoutes/index";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/401" component={Unauthorised} />
+        <AuthorisedRoute component={RoleRoutes}></AuthorisedRoute>
+      </Switch>
     </div>
   );
 }
